@@ -47,3 +47,27 @@ the correct way to handle 'nested' info)?*
 
 
 ### Business Logic
+It is much easier to understand what is going to happen, or what
+has happened over a specific time period when you are looking at a
+timeline.  It would be much harder to understand how the upcoming
+conference you are attending will flow if everything is written in
+a few large paragraphs.  Our application would allow for a graphic
+representation of all the information that needs to be given out
+in an easily digestable manner.  
+
+This allows planning commitees tohave a tool to create an
+itenerary for their events where the most basic information is
+readily available.  If a user wants more information then are then
+able to either mouse over or click on the event on the timeline
+and get more specific information.  This application will help
+timeline viewers take in the information that is important for
+them and not have to sift through large amounts of information to
+find what they are looking for. *TODO: expand?*
+
+
+### Application Features
+*Should this be a list of basically all the functions that are
+going to need to be written?*
+
+This application is still in the planning phase, therefore, no
+lines have code have not yet been written.
