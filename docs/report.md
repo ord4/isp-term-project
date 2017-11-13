@@ -71,3 +71,26 @@ going to need to be written?*
 
 This application is still in the planning phase, therefore, no
 lines have code have not yet been written.
+
+#### Creating a Timeline
+*0%*
+Editors will be able to create a new timeline for their event
+which will bring up the timeline editor.  Editors will also be
+asked the start and end of their event.
+
+#### Editing a Timeline
+*0%*
+Editors will have options for adding new items, editing existing
+items, or removing items.  When adding an item the editor will get
+to enter a title and time period.  Then, the editor will be able
+to add additional information (text, links to other pages, etc.).
+
+#### Saving a Timeline
+*0%*
+When an editor wants to save their timeline to come back and
+finish editing later they can save their work.  This will store
+the timeline's current information in the database so it can be
+retrieved when they are ready to continue working on it.
+
+#### Exporting a Timeline
+*This section is yet to be determined*
