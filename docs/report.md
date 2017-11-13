@@ -1,6 +1,7 @@
 *This is a work in progress document*
 # Interactive Timeline Creator
 *TODO: Create header with necessary project information*
+
 This is a project by: Orion Davis and Tim Synder
 
 ### Introduction
