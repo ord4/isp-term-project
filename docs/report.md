@@ -26,8 +26,8 @@ written and formatted using HTML and CSS. The application is
 currently being developed on a WAMP servers local to
 developer machines. Amazon Web Services offer the capability to 
 host WAMP applications on remote Windows servers. Though not 
-typical for production level applciations, for our uses, this 
-could be the simplest soultion for global access to our app.
+typical for production level applciations, for the team's uses, this 
+could be the simplest soultion for global access to the application.
 
 #### User Experience
 For a user to use this application they would start off on a home
@@ -50,7 +50,7 @@ as timeline id, owner, and data. The timeline data will be a table of its own co
 different events making up a timeline. Multiple approaches for data storage and retrieval 
 are currently being considered. These include:
 
-  - Creating unique databse tables for timelines created by a user and storing individual table data items in cells
+  - Creating unique databse tables for individual timelines with timeine data items being stored in table cells
   
   - Storing whole XML or JSON files representing a timeline to a database table mapped to a unique user
 
@@ -62,17 +62,24 @@ timeline.  It would be much harder to understand how the upcoming
 conference you are attending will flow if everything is written in
 a few large paragraphs.  Our application would allow for a graphic
 representation of all the information that needs to be given out
-in an easily digestable manner.  
+in an easily digestable manner.
 
 This allows planning commitees tohave a tool to create an
 itenerary for their events where the most basic information is
 readily available.  If a user wants more information then are then
 able to either mouse over or click on the event on the timeline
-and get more specific information.  This application will help
-timeline viewers take in the information that is important for
-them and not have to sift through large amounts of information to
-find what they are looking for. *TODO: expand?*
+and get more specific information.  
 
+Additionally, news organizations can utilize this tool to present
+easily-digested representations of large, multi-year events
+such as global conflicts or court cases while maintaining the
+ability for the user to explore the detail of the event as they
+please.
+
+This application will help
+timeline viewers quickly understand the most important items from
+a large event while giving them the ability to discover more details
+in an engaging and intuitive matter.
 
 ### Application Features
 *Should this be a list of basically all the functions that are
@@ -81,18 +88,38 @@ going to need to be written?*
 This application is still in the planning phase, therefore, no
 lines have code have not yet been written.
 
+### Account Creation & Login
+
 #### Creating a Timeline
 *0%*
 Editors will be able to create a new timeline for their event
-which will bring up the timeline editor.  Editors will also be
-asked the start and end of their event.
+which will bring up the timeline editor. User will initially be
+asked for a timeline title.
 
 #### Editing a Timeline
 *0%*
 Editors will have options for adding new items, editing existing
 items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
-to add additional information (text, links to other pages, etc.).
+to add additional information or content (text, links to other pages, media etc.)
+An example item may be:
+
+  Time: "11/13/17"
+  
+  Title: "ISP Term Project Started"
+  
+  Description: "Tim and Orion began work on their ISP term project"
+  
+  Additional expandable info:
+  
+    item 1: Link to github page
+    
+    item 2: Image of work-in-progress
+    
+    item 3: Video of prototype demo
+
+Production goal: Allow users to use prexisting timeline themes or create
+their own unique themes.
 
 #### Saving a Timeline
 *0%*
@@ -100,6 +127,13 @@ When an editor wants to save their timeline to come back and
 finish editing later they can save their work.  This will store
 the timeline's current information in the database so it can be
 retrieved when they are ready to continue working on it.
+
+##### Implementations
+
+  - Store timeline as XML or JSON
+  
+  - Decompose timeline data items into individual database cells
+ 
 
 #### Exporting a Timeline
 *This section is yet to be determined*
