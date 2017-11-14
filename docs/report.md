@@ -102,15 +102,16 @@ Editors will have options for adding new items, editing existing
 items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
 to add additional information or content (text, links to other pages, media etc.)
-An example item may be:
 
-  Time: "11/13/17"
+##### Example item:
+
+    Time: "11/13/17"
   
-  Title: "ISP Term Project Started"
+    Title: "ISP Term Project Started"
   
-  Description: "Tim and Orion began work on their ISP term project"
+    Description: "Tim and Orion began work on their ISP term project"
   
-  Additional expandable info:
+    Additional expandable info:
   
     item 1: Link to github page
     
