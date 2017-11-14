@@ -22,7 +22,12 @@ database and server side programming.  To communicate with the
 server PHP was the language chosen.  Specific details of the
 database design will be outlined later in the document, but the
 database platform chosen was MySQL.  All the webpages seen were
-written and formatted using HTML and CSS.
+written and formatted using HTML and CSS. The application is
+currently being developed on a WAMP servers local to
+developer machines. Amazon Web Services offer the capability to 
+host WAMP applications on remote Windows servers. Though not 
+typical for production level applciations, for our uses, this 
+could be the simplest soultion for global access to our app.
 
 #### User Experience
 For a user to use this application they would start off on a home
@@ -33,18 +38,21 @@ make edits and view the timeline as they please.  If starting from
 scratch, the user will have the same editing interface but with an
 empty canvas.  At any point the user can view the timeline and a
 new window will be opened in which the user can view the timeline
-and see what other viewers will experience.  *TODO: Is there going
-to be a way for the timeline to be exported/embedded into other
-webpages?*
+and see what other viewers will experience. One production goal
+is to allow for the exportation and embedding of timelines into
+other external web pages.
 
 #### Database Design
 As stated earlier, the team used MySQL to maintain the database
 for this application.  The information for a timeline will be
 stored in a table which will hold the following information, such
 as timeline id, owner, and data. The timeline data will be a table of its own containing the
-different events making up a timeline. *TODO: Go into more
-specifics of how the timeline data table will look (is this even
-the correct way to handle 'nested' info)?*
+different events making up a timeline. Multiple approaches for data storage and retrieval 
+are currently being considered. These include:
+
+  - Creating unique databse tables for timelines created by a user and storing individual table data items in cells
+  
+  - Storing whole XML or JSON files representing a timeline to a database table mapped to a unique user
 
 
 ### Business Logic
