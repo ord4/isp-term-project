@@ -152,3 +152,15 @@ retrieved when they are ready to continue working on it.
 
 #### Exporting a Timeline
 Portable version of app with accompanying XML/JSON representation of timeline
+
+### Roadmap
+
+1) Create basic web application to parse and display (as HTML) a XML/JSON file describing structure of timeline
+
+2) Add functionality to application to edit the XML/JSON file and save the changes to it
+
+3) Couple application to a databse to store XML/JSON files to retrieve and share later
+
+4) Design more intuitive user-interface with Javascript and CSS
+
+5) Add more comprehensive database system to accomdate multiple users that own multiple timelines
