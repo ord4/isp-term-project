@@ -86,20 +86,26 @@ has been developed.
 ### Account Creation & Login
 User will be prompted to login to their account on the homepage.
 Once logged in, they will be directed to a dashboard with various
-account settings and a list the timelines they've created.
+account settings and a list the timelines they've created. Usernames will
+be mapped to a unique key for the database and associated timelines
+will be mapped to the user with the same key.
 
 #### Creating a Timeline
-*0%*
 Editors will be able to create a new timeline for their event
 which will bring up the timeline editor. User will initially be
 asked for a timeline title.
 
 #### Editing a Timeline
-*0%*
 Editors will have options for adding new items, editing existing
 items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
 to add additional information or content (text, links to other pages, media etc.)
+
+Initial goal: User edits XML/JSON file directly
+
+Main goal: Static button-control interface
+
+Production goal: Dynamic drag-and-drop interface
 
 ##### Example item/timeline node:
 
@@ -111,30 +117,30 @@ to add additional information or content (text, links to other pages, media etc.
   
     Additional expandable info:
   
-    item 1: Link to github page
+      item 1: Link to github page
     
-    item 2: Image of work-in-progress
+      item 2: Image of work-in-progress
     
-    item 3: Video of prototype demo
+      item 3: Video of prototype demo
 
 Production goal: Allow users to use prexisting timeline themes or create
 their own unique themes.
 
 #### Saving a Timeline
-*0%*
 When an editor wants to save their timeline to come back and
 finish editing later they can save their work.  This will store
 the timeline's current information in the database so it can be
 retrieved when they are ready to continue working on it.
 
-##### Implementations
+##### Implementation of save
 
   - Serialize timeline into a JSON or XML file and save to a table containing other timelines
   unique to the user
   
   - Decompose timeline data items into individual database cells and save to individual table, mapped to
-  another table unique to the user
+  another table unique to the user... Could pose a problem given the nested nature and dynamic typing
+  of timeline nodes
  
 
 #### Exporting a Timeline
-*This section is yet to be determined*
+Portable version of app with accompanying XML/JSON representation of timeline
