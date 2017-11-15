@@ -84,6 +84,9 @@ production code have been written yet. A small, proof-of-concept build
 has been developed.
 
 ### Account Creation & Login
+User will be prompted to login to their account on the homepage.
+Once logged in, they will be directed to a dashboard with various
+account settings and a list the timelines they've created.
 
 #### Creating a Timeline
 *0%*
@@ -98,7 +101,7 @@ items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
 to add additional information or content (text, links to other pages, media etc.)
 
-##### Example item:
+##### Example item/timeline node:
 
     Time: "11/13/17"
   
@@ -126,9 +129,11 @@ retrieved when they are ready to continue working on it.
 
 ##### Implementations
 
-  - Store timeline as XML or JSON
+  - Serialize timeline into a JSON or XML file and save to a table containing other timelines
+  unique to the user
   
-  - Decompose timeline data items into individual database cells
+  - Decompose timeline data items into individual database cells and save to individual table, mapped to
+  another table unique to the user
  
 
 #### Exporting a Timeline
