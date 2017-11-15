@@ -1,8 +1,5 @@
-*This is a work in progress document*
 # Interactive Timeline Creator
-*TODO: Create header with necessary project information*
-
-This is a project by: Orion Davis and Tim Synder
+Internet Systems Programming Term Project by Orion Davis and Tim Snyder
 
 ### Introduction
 This project is a web application that will allow users to create
@@ -64,7 +61,7 @@ a few large paragraphs.  Our application would allow for a graphic
 representation of all the information that needs to be given out
 in an easily digestable manner.
 
-This allows planning commitees tohave a tool to create an
+This allows planning commitees to have a tool to create an
 itenerary for their events where the most basic information is
 readily available.  If a user wants more information then are then
 able to either mouse over or click on the event on the timeline
@@ -82,11 +79,9 @@ a large event while giving them the ability to discover more details
 in an engaging and intuitive matter.
 
 ### Application Features
-*Should this be a list of basically all the functions that are
-going to need to be written?*
-
-This application is still in the planning phase, therefore, no
-lines have code have not yet been written.
+This application is still in the planning phase, therefore, no lines of
+production code have been written yet. A small, proof-of-concept build
+has been developed.
 
 ### Account Creation & Login
 
