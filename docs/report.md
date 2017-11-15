@@ -50,6 +50,14 @@ are currently being considered. These include:
   - Creating unique databse tables for individual timelines with timeine data items being stored in table cells
   
   - Storing whole XML or JSON files representing a timeline to a database table mapped to a unique user
+  
+The team's current design of the database would be as follows:
+
+  User table
+    Unique ID - Username - Hashed Password
+  
+  Timelines table
+    Unique ID - Timeline file
 
 
 ### Business Logic
@@ -93,7 +101,7 @@ will be mapped to the user with the same key.
 #### Creating a Timeline
 Editors will be able to create a new timeline for their event
 which will bring up the timeline editor. User will initially be
-asked for a timeline title.
+asked for a timeline title. 
 
 #### Editing a Timeline
 Editors will have options for adding new items, editing existing
@@ -101,11 +109,11 @@ items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
 to add additional information or content (text, links to other pages, media etc.)
 
-Initial goal: User edits XML/JSON file directly
+- Initial goal: User edits XML/JSON file directly
 
-Main goal: Static button-control interface
+- Main goal: Static button-control interface
 
-Production goal: Dynamic drag-and-drop interface
+- Production goal: Dynamic drag-and-drop interface
 
 ##### Example item/timeline node:
 
