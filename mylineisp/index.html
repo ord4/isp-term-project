@@ -1,8 +1,6 @@
 <!doctype html>
 <head>
-    <title>MyLine by Tim Snyder / Orion Davis</title>
-
-
+    <title>MyLine</title>
 
     <!-- BOOTSTRAP INCLUDES --> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,6 +10,7 @@
     <!-- J QUERY INCLUDES-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script>
+        // JQuery UI interaction functions
         $( function() {
             $( "#nodes" ).sortable();
             $( "#nodes" ).disableSelection();
@@ -30,9 +29,6 @@
     <script src="assets\js\main.js"></script>
 </head>
 
-
-
- 
 <body>
 
     <div class ="container-fluid">
@@ -46,37 +42,12 @@
 
             <div class="col-lg-8">
                 <div id="timeline-title"><h1>#timeine-title</h1></div>
-                <ul id="nodes">
-                    <!--
-                    <li class="node">
-                        <div class="node-title">#node1-title</div>
-                        <div class="node-date">#node1-date</div>
-                        <div class="node-more">
-
-                        </div>
-                    </li>
-
-                    <li class="node">
-                        <div class="node-title">#node2-title</div>
-                        <div class="node-date">#node2-date</div>
-                    </li>
-
-                    <li class="node">
-                        <div class="node-title">#node3-title</div>
-                        <div class="node-date">#node3-date</div>
-                    </li>
-                    -->
-                </ul>
+                <ul id="nodes"></ul>
                 <div id="trash">[ TRASH (drag timeline node here)]</div>
             </div>
         </div>
     </div>
  
-
-
-
 </body>
- 
-
  
 </html>
