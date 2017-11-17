@@ -1,7 +1,15 @@
 .node{
     list-style-type: none;
     background-color: #F8F8F8;
-    border-style: solid;
-    border-radius: 1px;
+    width: 200px;
+    padding: 10px;
     margin-bottom: 25px;
+}
+
+#trash{
+	color: white;
+	width: 200px;
+    padding: 10px;
+	font-size: 150%;
+	background-color: black;
 }

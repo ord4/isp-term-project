@@ -9,19 +9,6 @@
 
     <!-- J QUERY INCLUDES-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script>
-        // JQuery UI interaction functions
-        $( function() {
-            $( "#nodes" ).sortable();
-            $( "#nodes" ).disableSelection();
-            $( "#nodes" ).draggable();
-            $('#trash').droppable({
-                drop: function(event, ui) {
-                    ui.draggable.remove();
-                }
-            });
-        } );
-    </script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- NATIVE INCLUDES -->
@@ -42,8 +29,10 @@
 
             <div class="col-lg-8">
                 <div id="timeline-title"><h1>#timeine-title</h1></div>
-                <ul id="nodes"></ul>
-                <div id="trash">[ TRASH (drag timeline node here)]</div>
+                <ul id="nodes">
+
+                </ul>
+                <div id="trash">TRASH</div>
             </div>
         </div>
     </div>
