@@ -23,14 +23,37 @@
             <div class="col-lg-4 well">
                 <P><-- EDITOR SIDEBAR --></P>
                 <button class="btn btn-info" onclick=jsonifyTimeline()>JSONIFY</button>
-                <button class="btn btn-primary" onclick=addNode()>Add</button>
+                <button class="btn btn-primary" onclick=addNode()>Add (not updated)</button>
                 <p id="json-out"></p>
+
+                <iframe src="http://jsonprettyprint.com/" height="600" width="300"></iframe>
             </div>
 
             <div class="col-lg-8">
                 <div id="timeline-title"><h1>#timeine-title</h1></div>
-                <ul id="nodes">
 
+                <ul id="nodes">
+                    <li class="node">
+                        <div class="node-date">Node Date</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text</div>
+                                <img src="link-to-file" class="node-image" alt="Node Image">
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="node">
+                        <div class="node-date">Node Date 2</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title 2 (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text 2</div>
+                                <a href="link-to-website" class="node-link">Node Link</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
                 <div id="trash">TRASH</div>
             </div>

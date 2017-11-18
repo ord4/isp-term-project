@@ -1,0 +1,25 @@
+// MyLine JSON example:
+
+{
+	"title": "2017 ISP Conference",
+	"nodes": [
+		{
+			"node-title": "Meet & Greet",
+			"node-date": #ISO Date-Time,
+			// node-more may contain n additonal text, image, or link members
+			"node-more": [
+				"node-text": "Event held in conference hall B in bulding C. A chance to meet and mingle with colleauges.",
+				"node-image": # link to an image //(url and/or locally hosted?)
+			]
+		},
+		{
+			"node-title": "MySQL Presentation",
+			"node-date": #ISO Date-Time,
+			"node-more": [
+				"node-text": "Don't miss this tantalizing presentation from Dr. Xiao on the *wonders* of MySQL. ",
+				"node-link": # url to xiao's website
+			]
+		}
+	]
+
+}

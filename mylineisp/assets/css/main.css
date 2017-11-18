@@ -13,3 +13,23 @@
 	font-size: 150%;
 	background-color: black;
 }
+
+.node-title{
+    cursor: pointer;
+}
+
+.node-date{
+    display: inline;
+}
+
+.node-more{
+    display: inline;
+}
+
+.node-more h3:hover{
+    color: grey;
+}
+
+.node-link{
+    display: block;
+}
