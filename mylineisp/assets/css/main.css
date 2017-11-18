@@ -13,3 +13,7 @@
 	font-size: 150%;
 	background-color: black;
 }
+
+.node-link{
+    display: block;
+}

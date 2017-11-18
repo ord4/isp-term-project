@@ -25,6 +25,8 @@
                 <button class="btn btn-info" onclick=jsonifyTimeline()>JSONIFY</button>
                 <button class="btn btn-primary" onclick=addNode()>Add</button>
                 <p id="json-out"></p>
+
+                <iframe src="http://jsonprettyprint.com/" height="600" width="600"></iframe>
             </div>
 
             <div class="col-lg-8">
@@ -33,6 +35,11 @@
                     <li class="node">
                         <div class="node-title">Node Title</div>
                         <div class="node-date">Node Date</div>
+                        <div class="node-more">
+                            <div class="node-text">Node Text</div>
+                            <img src="link-to-file" class="node-image" alt="Node Image">
+                            <a href="link-to-website" class="node-link">Node Link</a>
+                        </div>
                     </li>
 
                 </ul>

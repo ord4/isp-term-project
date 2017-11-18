@@ -6,7 +6,7 @@ function jsonifyTimeline() {
         var timelineJSON = {};
 
         var timelineTitle = document.getElementById("timeline-title").textContent;
-        timelineJSON["timeline-title"] = timelineTitle;
+        timelineJSON["title"] = timelineTitle;
 
         // Init empty array in object for nodes
         timelineJSON["nodes"] = [];
@@ -20,20 +20,52 @@ function jsonifyTimeline() {
             // JS object holding the children of current node
             var children = nodes[i].children;
 
-            var name = children[0].textContent;
-            var date = children[1].textContent;
+            var nodeName = children[0].textContent;
+            var nodeDate = children[1].textContent;
 
-            var node = {"node-title" : name, "node-date" : date};
+            // An array containing the children of the "node-more" div, 
+            // the collapsable section of a timeline node holding extra information.
+            // There can be 0 to n extra data items in this section.
+            var nodeMore = children[2].children; 
 
-            timelineJSON["nodes"].push(node);
+            if(nodeMore.length > 0){
+
+                // An array to hold the parsed items as JS objects.
+                // This array will be added to the timelineJSON object as a main member.
+                var moreArray = []; 
+
+                for(i = 0; i < nodeMore.length; i++){
+
+                    var itemType = nodeMore[i].className;
+                    
+                    switch(itemType){
+                        case "node-text":
+                            var item = {"node-text" : nodeMore[i].textContent};
+                            break;
+                        case "node-link":
+                            var item = {"node-link" : nodeMore[i].getAttribute("href")};
+                            break;
+                        case "node-image":
+                            var item = {"node-image" : nodeMore[i].getAttribute("src")};
+                            break;
+                    }
+
+                    moreArray.push(item);
+                }
+            }
+
+            var newNode = {"node-title" : nodeName, "node-date" : nodeDate, "node-more" : moreArray};
+
+            timelineJSON["nodes"].push(newNode);
         }
 
-        // output to page
+    // Output to page
     var jsonout = document.getElementById("json-out");
     jsonout.innerHTML=JSON.stringify(timelineJSON);
  }
 
-// Add a new node to the bottom of the timeline... no user input yet
+// Add a new node to the bottom of the timeline
+// No support for user input or the "node-more" data members
  function addNode(){
     var i = document.getElementsByClassName("node").length + 1;
 

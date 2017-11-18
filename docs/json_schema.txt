@@ -1,4 +1,4 @@
-// MyLine JSON schema example:
+// MyLine JSON example:
 
 {
 	"title": "2017 ISP Conference",
