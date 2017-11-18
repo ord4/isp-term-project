@@ -20,33 +20,33 @@ function jsonifyTimeline() {
             // JS object holding the children of current node
             var children = nodes[i].children;
 
-            var nodeName = children[0].textContent;
-            var nodeDate = children[1].textContent;
+            var nodeDate = children[0].textContent;
+          
 
             // An array containing the children of the "node-more" div, 
             // the collapsable section of a timeline node holding extra information.
             // There can be 0 to n extra data items in this section.
-            var nodeMore = children[2].children; 
+            var nodeMore = children[1].children; 
 
             if(nodeMore.length > 0){
-
                 // An array to hold the parsed items as JS objects.
                 // This array will be added to the timelineJSON object as a main member.
                 var moreArray = []; 
+                var nodeTitle = nodeMore[0].textContent;
+                nodeMore = nodeMore[1].children;
+                for(var j = 0; j < nodeMore.length; j++){
 
-                for(i = 0; i < nodeMore.length; i++){
+                    var itemType = nodeMore[j].className;
 
-                    var itemType = nodeMore[i].className;
-                    
                     switch(itemType){
                         case "node-text":
-                            var item = {"node-text" : nodeMore[i].textContent};
+                            var item = {"node-text" : nodeMore[j].textContent};
                             break;
                         case "node-link":
-                            var item = {"node-link" : nodeMore[i].getAttribute("href")};
+                            var item = {"node-link" : nodeMore[j].getAttribute("href")};
                             break;
                         case "node-image":
-                            var item = {"node-image" : nodeMore[i].getAttribute("src")};
+                            var item = {"node-image" : nodeMore[j].getAttribute("src")};
                             break;
                     }
 
@@ -54,7 +54,7 @@ function jsonifyTimeline() {
                 }
             }
 
-            var newNode = {"node-title" : nodeName, "node-date" : nodeDate, "node-more" : moreArray};
+            var newNode = {"node-title" : nodeTitle, "node-date" : nodeDate, "node-more" : moreArray};
 
             timelineJSON["nodes"].push(newNode);
         }
@@ -91,12 +91,24 @@ function jsonifyTimeline() {
 
 // JQuery functions for Drag-And-Drop interaction
 $( function() {
-    $( "#nodes" ).sortable();
+    $( "#nodes" ).sortable({
+        stop: function(e, ui) {
+            console.log($.map($(this).find('li'), function(el) {
+                return $(el).attr('class') + ' = ' + $(el).index();
+            }));
+        }
+    });
     $( "#nodes" ).disableSelection();
     $( "#nodes" ).draggable();
+    $( ".node-more" ).accordion({
+      active: false,
+      collapsible: true
+    });
     $('#trash').droppable({
         drop: function(event, ui) {
             ui.draggable.remove();
         }
     });
+
+
 } );
