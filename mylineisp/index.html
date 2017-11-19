@@ -7,11 +7,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- J QUERY INCLUDES-->
+    <!-- JQUERY UI INCLUDES-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- JQUERY TOUCH INCLUDES-->
+    <script src="assets\js\jquery.ui.touch-punch.min.js"></script>
 
-    <!-- NATIVE INCLUDES -->
+    <!-- NATIVE SOURCE INCLUDES -->
     <link rel="stylesheet" href="assets\css\main.css">
     <script src="assets\js\main.js"></script>
 </head>
@@ -28,21 +30,21 @@
                 <button class="btn btn-primary" onclick=peekTimeline()>Peek</button>
                 <button class="btn btn-primary" onclick=addNode()>Add (not updated)</button>
                 <p id="json-out"></p>
-
-                <iframe src="http://jsonprettyprint.com/" height="600" width="300"></iframe>
             </div>
 
             <div class="col-lg-8 timeline">
                 <div id="timeline-title"><h1>#timeine-title</h1></div>
-                    <li class="node"></li>
                 <ul id="nodes">
+                    <li class="node"><div class="node-date">12/03/1996</div></li>
+                    <li class="node"><div class="node-date">06/03/2002</div></li>
+                    <li class="node"><div class="node-date">11/20/2017</div></li>
                 </ul>
 
                 <div id="trash">TRASH</div>
             </div>
         </div>
         <h1>JSON Node for dev</h1>
-        <p>{"title":"#timeine-title","nodes":[{"node-title":"Node Title (click me)","node-date":"Node Date","node-more":[{"node-text":"Node Text"},{"node-image":"link-to-file"}]},{"node-title":"Node Title 2 (click me)","node-date":"Node Date 2","node-more":[{"node-text":"Node Text 2"},{"node-link":"link-to-website"}]}]}</p>
+        <p>{"title":"#timeine-title","nodes":[{"node-title":"Node Title (click me)","node-date":"Node Date","node-more":[{"node-text":"Node Text"},{"node-image":"link-to-file"}]},{"node-title":"Node Title 2 (click me)","node-date":"Node Date 2","node-more":[{"node-text":"Node Text 2"},{"node-link":"link-to-website"}]},{"node-title":"Node Title 3 (click me)","node-date":"Node Date 3","node-more":[{"node-text":"Node Text 3"},{"node-link":"link-to-website"}]}]}</p>
     </div>
  
 </body>
@@ -76,6 +78,8 @@
                             </div>
                         </div>
                     </li>
+
+
                 </ul>
 
 -->

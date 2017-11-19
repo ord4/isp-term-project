@@ -1,10 +1,19 @@
 var timeline = {}; //Global object model for timeline
 timeline["nodes"] = [];
+// Global integer to track old/new position of a timeline node
+var oldIndex;
+var newIndex;
 
+function updateTimelineOrder(){
+    var node = timeline["nodes"][oldIndex];
+    timeline["nodes"].splice(oldIndex, 1);
+    timeline["nodes"].splice(newIndex, 0, node);
+}
 
 function peekTimeline(){
-    var timelineString = JSON.stringify(timeline);
-    alert(timelineString);
+    var timelineString = JSON.stringify(timeline, null, 2);
+    var jsonout = document.getElementById("json-out");
+    jsonout.innerHTML=timelineString;
 }
 
 function loadTimeline(){
@@ -116,7 +125,7 @@ function jsonifyTimeline() {
         }
 
     var jsonout = document.getElementById("json-out");
-    jsonout.innerHTML=JSON.stringify(timelineJSON);
+    jsonout.innerHTML=JSON.stringify(timelineJSON, null, 2);
 }
 
 // Add a new node to the bottom of the timeline
@@ -147,11 +156,15 @@ function jsonifyTimeline() {
 // JQuery functions for Drag-And-Drop interaction
 $( function() {
     $( "#nodes" ).sortable({
-        stop: function(e, ui) {
-            console.log($.map($(this).find('li'), function(el) {
-                return $(el).attr('class') + ' = ' + $(el).index();
-            }));
-        }
+    start: function(e, ui) {
+        // Old position of node on timeline (before drag and drop)
+        oldIndex = ui.item.index();
+    },
+    update: function(e, ui) {
+        // New position of nod eon timeline (after drag and drop)
+        newIndex = ui.item.index();
+        updateTimelineOrder();
+    }
     });
     $( "#nodes" ).disableSelection();
     $( "#nodes" ).draggable();
