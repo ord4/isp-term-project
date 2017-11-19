@@ -1,5 +1,62 @@
+var timeline = {}; //Global object model for timeline
+timeline["nodes"] = [];
 
-// Seriazlie timeline into javascript
+
+function peekTimeline(){
+    var timelineString = JSON.stringify(timeline);
+    alert(timelineString);
+}
+
+function loadTimeline(){
+    var timelineJSON = prompt("Paste JSON"); // Will be loaded from db
+    timeline = JSON.parse(timelineJSON);
+    populateTimeline();
+}
+/*
+                <div id="timeline-title">#timeine-title</div>
+
+                <ul id="nodes">
+                    <li class="node">
+                        <div class="node-date">Node Date</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text</div>
+                                <img src="link-to-file" class="node-image" alt="Node Image">
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="node">
+                        <div class="node-date">Node Date 2</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title 2 (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text 2</div>
+                                <a href="link-to-website" class="node-link">Node Link</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+*/
+function populateTimeline(){
+
+    var timelineTitle = timeline["title"];
+    var nodes = timeline["nodes"];
+
+    for(var i = 0; i < nodes.length; i++){
+        
+        
+    }
+}
+
+function newTimeline(){
+    var timelineTitle = prompt("Title: ");
+    timeline["title"] = timelineTitle;
+}
+
+
+// Seriazlie timeline into javascript --> to be deprecated
 function jsonifyTimeline() {
 
         // Init JSON object
@@ -22,7 +79,6 @@ function jsonifyTimeline() {
 
             var nodeDate = children[0].textContent;
           
-
             // An array containing the children of the "node-more" div, 
             // the collapsable section of a timeline node holding extra information.
             // There can be 0 to n extra data items in this section.
@@ -59,10 +115,9 @@ function jsonifyTimeline() {
             timelineJSON["nodes"].push(newNode);
         }
 
-    // Output to page
     var jsonout = document.getElementById("json-out");
     jsonout.innerHTML=JSON.stringify(timelineJSON);
- }
+}
 
 // Add a new node to the bottom of the timeline
 // No support for user input or the "node-more" data members

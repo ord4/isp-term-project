@@ -23,14 +23,36 @@
             <div class="col-lg-4 well">
                 <P><-- EDITOR SIDEBAR --></P>
                 <button class="btn btn-info" onclick=jsonifyTimeline()>JSONIFY</button>
+                <button class="btn btn-primary" onclick=loadTimeline()>Load</button>
+                <button class="btn btn-primary" onclick=newTimeline()>New</button>
+                <button class="btn btn-primary" onclick=peekTimeline()>Peek</button>
                 <button class="btn btn-primary" onclick=addNode()>Add (not updated)</button>
                 <p id="json-out"></p>
 
                 <iframe src="http://jsonprettyprint.com/" height="600" width="300"></iframe>
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 timeline">
                 <div id="timeline-title"><h1>#timeine-title</h1></div>
+                    <li class="node"></li>
+                <ul id="nodes">
+                </ul>
+
+                <div id="trash">TRASH</div>
+            </div>
+        </div>
+        <h1>JSON Node for dev</h1>
+        <p>{"title":"#timeine-title","nodes":[{"node-title":"Node Title (click me)","node-date":"Node Date","node-more":[{"node-text":"Node Text"},{"node-image":"link-to-file"}]},{"node-title":"Node Title 2 (click me)","node-date":"Node Date 2","node-more":[{"node-text":"Node Text 2"},{"node-link":"link-to-website"}]}]}</p>
+    </div>
+ 
+</body>
+ 
+</html>
+
+
+
+<!--
+                <div id="timeline-title">#timeine-title</div>
 
                 <ul id="nodes">
                     <li class="node">
@@ -55,11 +77,5 @@
                         </div>
                     </li>
                 </ul>
-                <div id="trash">TRASH</div>
-            </div>
-        </div>
-    </div>
- 
-</body>
- 
-</html>
+
+-->
