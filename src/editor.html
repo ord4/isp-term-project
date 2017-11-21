@@ -1,0 +1,85 @@
+<!doctype html>
+<head>
+    <title>MyLine</title>
+
+    <!-- BOOTSTRAP INCLUDES --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JQUERY UI INCLUDES-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- JQUERY TOUCH INCLUDES-->
+    <script src="assets\js\jquery.ui.touch-punch.min.js"></script>
+
+    <!-- NATIVE SOURCE INCLUDES -->
+    <link rel="stylesheet" href="assets\css\main.css">
+    <script src="assets\js\main.js"></script>
+</head>
+
+<body>
+
+    <div class ="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 well">
+                <P><-- EDITOR SIDEBAR --></P>
+                <button class="btn btn-info" onclick=jsonifyTimeline()>JSONIFY</button>
+                <button class="btn btn-primary" onclick=loadTimeline()>Load</button>
+                <button class="btn btn-primary" onclick=newTimeline()>New</button>
+                <button class="btn btn-primary" onclick=peekTimeline()>Peek</button>
+                <button class="btn btn-primary" onclick=addNode()>Add (not updated)</button>
+                <p id="json-out"></p>
+            </div>
+
+            <div class="col-lg-8 timeline">
+                <div id="timeline-title"><h1>#timeine-title</h1></div>
+                <ul id="nodes">
+                    <li class="node"><div class="node-date">12/03/1996</div></li>
+                    <li class="node"><div class="node-date">06/03/2002</div></li>
+                    <li class="node"><div class="node-date">11/20/2017</div></li>
+                </ul>
+
+                <div id="trash">TRASH</div>
+            </div>
+        </div>
+        <h1>JSON Node for dev</h1>
+        <p>{"title":"#timeine-title","nodes":[{"node-title":"Node Title (click me)","node-date":"Node Date","node-more":[{"node-text":"Node Text"},{"node-image":"link-to-file"}]},{"node-title":"Node Title 2 (click me)","node-date":"Node Date 2","node-more":[{"node-text":"Node Text 2"},{"node-link":"link-to-website"}]},{"node-title":"Node Title 3 (click me)","node-date":"Node Date 3","node-more":[{"node-text":"Node Text 3"},{"node-link":"link-to-website"}]}]}</p>
+    </div>
+ 
+</body>
+ 
+</html>
+
+
+
+<!--
+                <div id="timeline-title">#timeine-title</div>
+
+                <ul id="nodes">
+                    <li class="node">
+                        <div class="node-date">Node Date</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text</div>
+                                <img src="link-to-file" class="node-image" alt="Node Image">
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="node">
+                        <div class="node-date">Node Date 2</div>
+                        <div class="node-more">
+                            <h3 class="node-title">Node Title 2 (click me)</h3>
+                            <div>
+                                <div class="node-text">Node Text 2</div>
+                                <a href="link-to-website" class="node-link">Node Link</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+
+-->
