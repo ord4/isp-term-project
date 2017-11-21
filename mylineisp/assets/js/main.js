@@ -52,11 +52,48 @@ function populateTimeline(){
 
     var timelineTitle = timeline["title"];
     var nodes = timeline["nodes"];
+    alert(timelineTitle);
 
     for(var i = 0; i < nodes.length; i++){
-        
-        
+        addNode(nodes[i]);
     }
+}
+function addNode(node){
+
+    var nodeTitle = node["node-title"];
+    var nodeDate = node["node-date"];
+    var nodeMore = node["node-more"];
+
+    var nodeItems = [];
+        
+    for(var i = 0; i < nodeMore.length; i++){
+        nodeItems.push(addNodeItem(nodeMore[i]));
+    }
+}
+
+function addNodeItem(item){
+
+    var type = Object.keys(item).toString();
+    
+    switch(type){
+
+        case "node-text":
+            var itemDiv = document.createElement("DIV");
+            itemDiv.className = type;
+            itemDiv.textContent = item[type];
+            break;
+
+        case "node-link":
+            var itemDiv = document.createElement("A");
+            itemDiv.className = type;
+            itemDiv.setAttribute("href", item[type]);
+            break;
+
+        case "node-image":
+            break;
+    }
+
+    return itemDiv;
 }
 
 function newTimeline(){
@@ -130,7 +167,7 @@ function jsonifyTimeline() {
 
 // Add a new node to the bottom of the timeline
 // No support for user input or the "node-more" data members
- function addNode(){
+ function addNodeOld(){
     var i = document.getElementsByClassName("node").length + 1;
 
     var nodeTitle = "#newTitle" + i; //prompt("Node Title");
