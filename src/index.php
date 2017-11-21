@@ -6,7 +6,9 @@
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <input type="submit" name="submit_creds" value="Log in">
+        <footer>Don't have an account?</footer>
     </form>
+    
 
     <?php
         // Connect to a local testing database with one table 
@@ -40,7 +42,7 @@
             else {
                 // The result was found and we should go to the editor and load
                 // the user's timeline
-                
+                 
                 
             }
         }
