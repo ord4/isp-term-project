@@ -28,11 +28,19 @@
             $user_username = $_POST['username'];
             $user_password = $_POST['password'];
 
-            $query_str = "SELECT * FROM user WHERE username=$user_username AND password=$user_password";
+            $query_str = "SELECT * FROM user WHERE username = '$user_username' AND password = '$user_password'";
             $result = mysqli_query($conn, $query_str);
 
-            if ($result) {
-                print("<p>Matched the query");
+            if (!$result) {
+                // There was an error in query, meaning nothing of that input
+                // was found
+                $login_error_msg = "The entered username and/or password was incorrect.";
+                echo "<script type='text/javascript'>alert('$login_error_msg');</script>";
+            }
+            else {
+                // The result was found and we should go to the editor and load
+                // the user's timeline
+                
             }
         }
     ?>
