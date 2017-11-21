@@ -2,7 +2,7 @@
 <html lang="eng">
 <head><title>MyLine</title></head>
 <body>
-    <form id="login_form">
+    <form name="login_form">
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
         <input type="submit" name="submit_creds" value="Log in">
