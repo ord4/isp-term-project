@@ -3,12 +3,13 @@
 <head><title>MyLine</title></head>
 <body>
     <form name="login_form" action="index.php" method="POST">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
         <input type="submit" name="submit_creds" value="Log in">
-        <input type="submit" name="register" value="Register"
     </form>
-    
+    <form name="registration_form" action="index.php" method="POST">
+        <input type="submit" name="register" value="Register"
+    </form>    
 
     <?php
         // Connect to a local testing database with one table 
@@ -42,7 +43,8 @@
                 header("Location: http://localhost/testing/isp-term-project/src/views/editor.html");                
             }
         }
-        else if (isset($_POST['register'])) {
+        if (isset($_POST['register'])) {
+            print("<p>sign me up bro</p?");
             header("Location: http://localhost/testing/isp-term-project/src/views/signup.html");
         }
     ?>
