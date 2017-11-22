@@ -3,10 +3,10 @@
 <head><title>MyLine</title></head>
 <body>
     <form name="login_form" action="index.php" method="POST">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
         <input type="submit" name="submit_creds" value="Log in">
-        <input type="submit" name="register" value="Register"
+        <footer>Don't have an account?<a href="">Click here to sign up!</a></footer>
     </form>
     
 
@@ -26,6 +26,7 @@
 
         // Get the credentials from the form
         if (isset($_POST['submit_creds'])) {
+            print("<p>Inside post method?</p>");
             $user_username = $_POST['username'];
             $user_password = $_POST['password'];
 
@@ -33,17 +34,18 @@
             $result = mysqli_query($conn, $query_str);
 
             if (!$result) {
-                // The credentials did not match
+                // There was an error in query, meaning nothing of that input
+                // was found
                 $login_error_msg = "The entered username and/or password was incorrect.";
                 echo "<script type='text/javascript'>alert('$login_error_msg');</script>";
             }
             else {
-                // Proper credentials, send them to the editor
-                header("Location: http://localhost/testing/isp-term-project/src/views/editor.html");                
+                // The result was found and we should go to the editor and load
+                // the user's timeline
+                //print("<p>Time to route this puppy</p>");
+                header('Location: http://localhost/testing/isp-term-project/src/views/editor.html');
+                
             }
-        }
-        else if (isset($_POST['register'])) {
-            header("Location: http://localhost/testing/isp-term-project/src/views/signup.html");
         }
     ?>
 </body>
