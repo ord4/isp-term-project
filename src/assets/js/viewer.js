@@ -3,8 +3,9 @@ timeline["nodes"] = [];
 
 
 function loadTimeline(){
-    var timelineJSON = "{\"title\":\"Title\",\"desc\":\"A short description\",\"nodes\":[{\"node-title\":\"Node Title (click me)\",\"node-date\":\"Node Date\",\"node-more\":[{\"node-text\":\"Node Text\"},{\"node-image\":\"link-to-file\"}]},{\"node-title\":\"Node Title 2 (click me)\",\"node-date\":\"Node Date 2\",\"node-more\":[{\"node-text\":\"Node Text 2\"},{\"node-link\":\"link-to-website\"}]},{\"node-title\":\"Node Title 3 (click me)\",\"node-date\":\"Node Date 3\",\"node-more\":[{\"node-text\":\"Node Text 3\"},{\"node-link\":\"link-to-website\"}]}]}";
+    var timelineJSON = "{\"theme\":\"#1861bb\",\"title\":\"Title\",\"desc\":\"A short description\",\"nodes\":[{\"node-title\":\"Node Title (click me)\",\"node-date\":\"Node Date\",\"node-more\":[{\"node-text\":\"Node Text\"},{\"node-image\":\"link-to-file\"}]},{\"node-title\":\"Node Title 2 (click me)\",\"node-date\":\"Node Date 2\",\"node-more\":[{\"node-text\":\"Node Text 2\"},{\"node-link\":\"link-to-website\"}]},{\"node-title\":\"Node Title 3 (click me)\",\"node-date\":\"Node Date 3\",\"node-more\":[{\"node-text\":\"Node Text 3\"},{\"node-link\":\"link-to-website\"}]}]}";
     timeline = JSON.parse(timelineJSON);
+    document.getElementById("main-jumbo").style.backgroundColor = timeline["theme"];
     renderTimeline();
 }
 

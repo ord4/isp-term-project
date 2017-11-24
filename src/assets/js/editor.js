@@ -1,4 +1,7 @@
 var timeline = {}; //Global object model for timeline
+timeline["theme"] = "#999999";
+timeline["title"] = "title";
+timeline["desc"] = "description";
 timeline["nodes"] = [];
 // Global integer to track old/new position of a timeline node
 var oldIndex;
@@ -22,8 +25,10 @@ function peekTimeline(){
 
 function loadTimeline(){
     var timelineJSON = prompt("Paste JSON"); // Will be loaded from db
-    timeline = JSON.parse(timelineJSON);
-    renderTimeline();
+    if(timelineJSON != null){
+        timeline = JSON.parse(timelineJSON);
+        renderTimeline();
+    }
 }
 
 
@@ -131,10 +136,12 @@ function addNode(){
 
 function newTimeline(){
     timeline = {};
+    timeline["theme"] = prompt("Theme (Hex Color)");
+    timeline["title"] = prompt("Title");
+    timeline["desc"] = prompt("A Short Description")
     timeline["nodes"] = [];
 
-    var timelineTitle;
-    var timelineDesc;
+    renderTimeline();
 }
 
 function clearTimeline(){
@@ -170,7 +177,6 @@ $(document).ready(function() {
             //index = ui.item.index();
             removeNode(oldIndex);
             ui.draggable.remove();
-            alert(oldIndex);
         }
     });
 
