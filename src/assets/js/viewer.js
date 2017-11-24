@@ -17,20 +17,26 @@ function applyTheme(){
 
     switch(theme){
         case "blue":
-            headColor = "#1861bb";
-            highlightColor = "#cac7f9";
+            highlightColor = "#1861bb";
+            headColor = "#4a81c4";
             break;
         case "red":
-            headColor = "#bb1919";
-            highlightColor = "";
+            highlightColor = "#bb1919";
+            headColor = "#c94242";
             break;
         case "green":
-            headColor = "#17bb66";
-            highlightColor = "";
+            highlightColor = "#17bb66";
+            headColor = "#41c681";
             break;
     }
 
     document.getElementById("main-jumbo").style.backgroundColor = headColor;
+
+    var nodeHeads = document.getElementsByClassName("node-date");
+
+    for(var i = 0; i <  nodeHeads.length; i++){
+         nodeHeads[i].style.backgroundColor = highlightColor;
+    }
 }
 
 
