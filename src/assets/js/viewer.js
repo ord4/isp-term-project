@@ -3,7 +3,7 @@ timeline["nodes"] = [];
 
 
 function loadTimeline(){
-    var timelineJSON = "{\"theme\":\"#1861bb\",\"title\":\"Title\",\"desc\":\"A short description\",\"nodes\":[{\"node-title\":\"Node Title (click me)\",\"node-date\":\"Node Date\",\"node-more\":[{\"node-text\":\"Node Text\"},{\"node-image\":\"link-to-file\"}]},{\"node-title\":\"Node Title 2 (click me)\",\"node-date\":\"Node Date 2\",\"node-more\":[{\"node-text\":\"Node Text 2\"},{\"node-link\":\"link-to-website\"}]},{\"node-title\":\"Node Title 3 (click me)\",\"node-date\":\"Node Date 3\",\"node-more\":[{\"node-text\":\"Node Text 3\"},{\"node-link\":\"link-to-website\"}]}]}";
+    var timelineJSON = "{\"theme\":\"#1861bb\",\"title\":\"CppCon 2017 Program\",\"desc\":\"CppCon is the annual, week-long face-to-face gathering for the entire C++ community. \",\"nodes\":[{\"node-title\":\"Lightning Talks\",\"node-date\":\"Saturday, September 23\",\"node-more\":[{\"node-text\":\"15 minute presentations from top C++ professionals.\"},{\"node-image\":\"http:\/\/clipart-library.com\/images\/8cAbM6zLi.jpg\"}]},{\"node-title\":\"Concurrent Thinking in C++\",\"node-date\":\"Sunday, September 24\",\"node-more\":[{\"node-text\":\"A two day training course taught by Anthony Williams of Just Software Solutions Ltd.\"},{\"node-link\":\"https:\/\/cppcon2017.sched.com\/event\/Bhaj\/concurrent-thinking-in-c\"}]},{\"node-title\":\"Learning and Teaching Modern C++\",\"node-date\":\"Monday, September 25\",\"node-more\":[{\"node-text\":\"The basics of Modern C++ and their applications in the classroom.\"},{\"node-link\":\"http:\/\/en.cppreference.com\/w\/\"}]}]}";
     timeline = JSON.parse(timelineJSON);
     document.getElementById("main-jumbo").style.backgroundColor = timeline["theme"];
     renderTimeline();
