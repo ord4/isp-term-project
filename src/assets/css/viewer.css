@@ -10,15 +10,49 @@
 
 .node{
     list-style-type: none;
-    background-color: #F8F8F8;
-    width: 200px;
+    background-color: white;
     padding: 10px;
     margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 
-h3{
+.node-date{
+    font-size: 14pt;
+    padding: 15px;
+    background-color: #c94242;
+    color:white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+
+}
+
+.node-more h3{
     outline-style: none;
     cursor: pointer;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.node-text{
+    margin-left: 10px;
+    font-size: 12pt;
+    margin-bottom: 10px;
+}
+
+.node-link{
+    margin-left: 10px;
+    font-size: 12pt;
+    margin-bottom: 10px;
+}
+
+.node-image{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 300px;
 }
 
 .node-more h3:hover{
