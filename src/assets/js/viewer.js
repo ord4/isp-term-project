@@ -1,44 +1,20 @@
 var timeline = {}; //Global object model for timeline
 timeline["nodes"] = [];
-// Global integer to track old/new position of a timeline node
-var oldIndex;
-var newIndex;
 
-function updateTimelineOrder(){
-    var node = timeline["nodes"][oldIndex];
-    timeline["nodes"].splice(oldIndex, 1);
-    timeline["nodes"].splice(newIndex, 0, node);
-}
-
-function removeNode(i){
-    timeline["nodes"].splice(i, 1);
-}
-
-function peekTimeline(){
-    var timelineString = JSON.stringify(timeline, null, 2);
-    var jsonout = document.getElementById("json-out");
-    jsonout.innerHTML=timelineString;
-}
 
 function loadTimeline(){
-    var timelineJSON = prompt("Paste JSON"); // Will be loaded from db
+    var timelineJSON = "{\"title\":\"Title\",\"desc\":\"A short description\",\"nodes\":[{\"node-title\":\"Node Title (click me)\",\"node-date\":\"Node Date\",\"node-more\":[{\"node-text\":\"Node Text\"},{\"node-image\":\"link-to-file\"}]},{\"node-title\":\"Node Title 2 (click me)\",\"node-date\":\"Node Date 2\",\"node-more\":[{\"node-text\":\"Node Text 2\"},{\"node-link\":\"link-to-website\"}]},{\"node-title\":\"Node Title 3 (click me)\",\"node-date\":\"Node Date 3\",\"node-more\":[{\"node-text\":\"Node Text 3\"},{\"node-link\":\"link-to-website\"}]}]}";
     timeline = JSON.parse(timelineJSON);
     renderTimeline();
 }
 
 
 
-/*
-
-*/
 
 function renderTimeline(){
-    
     document.getElementById("timeline-title").textContent = timeline["title"];
     document.getElementById("timeline-desc").textContent = timeline["desc"];
-
-    clearTimeline();
-
+    
     var nodes = timeline["nodes"];
     //document.getElementById("timeline-title").innerHTML = timeineTitle;
 
@@ -48,7 +24,9 @@ function renderTimeline(){
 
     $( ".node-more" ).accordion({
       active: false,
-      collapsible: true
+      collapsible: true,
+      animate: 250
+
     });
 }
 
@@ -115,64 +93,15 @@ function renderNodeItem(item){
     return itemDiv;
 }
 
-function addNode(){
 
-    var node = {};
-    node["node-title"] = "New Title";
-    node["node-date"] = "New Date";
-    node["node-more"] = [];
-    timeline["nodes"].push(node);
-
-    $( ".node-more" ).accordion({
-      active: false,
-      collapsible: true
-    });
-}
-
-function newTimeline(){
-    timeline = {};
-    timeline["nodes"] = [];
-
-    var timelineTitle;
-    var timelineDesc;
-}
-
-function clearTimeline(){
-
-    var myNode = document.getElementById("nodes");
-    myNode.innerHTML = '';
-}
 
 // JQuery functions for Drag-And-Drop interaction
 $(document).ready(function() {
+    loadTimeline();
     $( "#nodes" ).sortable({
-        start: function(e, ui) {
-            // Old position of node on timeline (before drag and drop)
-            oldIndex = ui.item.index();
-        },
-        update: function(e, ui) {
-            // New position of nod eon timeline (after drag and drop)
-            newIndex = ui.item.index();
-
-            // new index is -1 if element was removed
-            if(newIndex != -1){
-                updateTimelineOrder();
-            }
-        }
+         disabled: true
     });
     $( "#nodes" ).disableSelection();
-    $( ".node-more" ).accordion({
-      active: false,
-      collapsible: true
-    });
-    $('#trash').droppable({
-        drop: function(event, ui) {
-            //index = ui.item.index();
-            removeNode(oldIndex);
-            ui.draggable.remove();
-            alert(oldIndex);
-        }
-    });
 
 
 });

@@ -1,0 +1,29 @@
+#main-jumbo {
+    padding: 0.5em 0.6em;
+    color: white;
+    background-color: #BB1919;
+
+}
+
+#logo{
+    height: 50px;
+    margin: 20px;
+}
+
+.node{
+    list-style-type: none;
+    background-color: #F8F8F8;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+h3{
+    outline-style: none;
+    cursor: pointer;
+}
+
+.node-more h3:hover{
+    color: grey;
+}
+
