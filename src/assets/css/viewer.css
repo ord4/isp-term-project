@@ -1,0 +1,60 @@
+#main-jumbo {
+    padding: 0.5em 0.6em;
+    color: white;
+}
+
+#logo{
+    height: 50px;
+    margin: 20px;
+}
+
+.node{
+    list-style-type: none;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.node-date{
+    font-size: 16pt;
+    padding: 15px;
+    color:white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+
+}
+
+.node-more h3{
+    outline-style: none;
+    cursor: pointer;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.node-text{
+    margin-left: 10px;
+    font-size: 12pt;
+    margin-bottom: 10px;
+}
+
+.node-link{
+    margin-left: 10px;
+    font-size: 12pt;
+    margin-bottom: 10px;
+}
+
+.node-image{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 300px;
+}
+
+.node-more h3:hover{
+    color: grey;
+}
+
