@@ -13,5 +13,15 @@ The front end uses HTML and CSS to provide the interface to the user.  Most of t
 
 ### Screenshots
 Below are a series of screenshots of the application's different pages and interfaces.
+
 <label for="login_img">Login page, first page you encounter</label>
 <img id="login_img" src="./images/login.png" style="display:block;margin:auto;">
+<br>
+
+<label for="viewer_img">Example viewer output</label>
+<img id="viewer_img" src="./images/viewer.png" style="display:block;margin:auto;">
+<br>
+
+<label for="login_img">Login page, first page you encounter</label>
+<img id="login_img" src="./images/login.png" style="display:block;margin:auto;">
+<br>
