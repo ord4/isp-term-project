@@ -95,7 +95,6 @@ function checkPost(){
 
     document.getElementById("source_write").value = '';
     document.getElementById("source_write").value = JSON.stringify(timeline);
-    alert(document.getElementById("source_write").value);
 }
 
 function renderNode(node){

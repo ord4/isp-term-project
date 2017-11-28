@@ -33,7 +33,6 @@
                 <button class="btn btn-primary" onclick=editHeader()>Edit Header</button><br>
                 <button class="btn btn-primary" onclick=addNode()>Add Node</button><br>
                 <button class="btn btn-primary" onclick=changeTheme()>Change Theme</button><br>
-                <button class="btn btn-primary" onclick=checkPost()>check post (dev)</button><br>
                 <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br><br>
 
                 <form action="save.php" method="post">
