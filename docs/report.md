@@ -18,8 +18,6 @@ Below are a series of screenshots of the application's different pages and inter
 
 <img src="./images/register.png" style="display:block;margin:auto;">
 
-<img src="./images/viewer.png" style="display:block;margin:auto;">
-
 <img id="blank_editor" src="./images/blankeditor.png" style="display:block;margin:auto;">
 
 <img id="editor_progress_1" src="./images/editor_progress1.png" style="display:block;margin:auto;">
