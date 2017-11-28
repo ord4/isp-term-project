@@ -23,6 +23,7 @@
 
     <div class="jumbotron text-center" id="main-jumbo">
         <h1 id="timeline-title"></h1>
+        <p id="timeline-desc"></p> 
     </div>
 
     <div class ="container-fluid">
@@ -32,6 +33,7 @@
                 <button class="btn btn-primary" onclick=editHeader()>Edit Header</button><br>
                 <button class="btn btn-primary" onclick=addNode()>Add Node</button><br>
                 <button class="btn btn-primary" onclick=changeTheme()>Change Theme</button><br>
+                <button class="btn btn-primary" onclick=checkPost()>check post (dev)</button><br>
                 <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br><br>
 
                 <form action="save.php" method="post">

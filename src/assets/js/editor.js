@@ -92,8 +92,10 @@ function renderTimeline(){
 }
 
 function checkPost(){
+
     document.getElementById("source_write").value = '';
     document.getElementById("source_write").value = JSON.stringify(timeline);
+    alert(document.getElementById("source_write").value);
 }
 
 function renderNode(node){
@@ -259,6 +261,7 @@ $(document).ready(function() {
         update: function(e, ui) {
             // New position of nod eon timeline (after drag and drop)
             newIndex = ui.item.index();
+            checkPost();
 
             // new index is -1 if element was removed
             if(newIndex != -1){

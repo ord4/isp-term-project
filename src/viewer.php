@@ -22,8 +22,8 @@
     <a href="login.php"><img id="logo" src="assets\images\myline.png"></a>
 
     <div class="jumbotron text-center" id="main-jumbo">
-        <h1 id="timeline-title">#timeine-title</h1>
-        <p id="timeline-desc">#timeline-description</p> 
+        <h1 id="timeline-title"></h1>
+        <p id="timeline-desc"></p> 
     </div>
 
     <div class ="container-fluid">

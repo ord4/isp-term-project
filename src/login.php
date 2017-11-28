@@ -119,7 +119,7 @@
                 </div>
 
                 <input type="radio" name="mode" value="view" checked> Viewer<br>
-                <input type="radio" name="mode" value="edit"> Editor<br>
+                <input type="radio" name="mode" value="edit"> Editor<br><br>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
