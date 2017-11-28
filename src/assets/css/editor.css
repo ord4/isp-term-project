@@ -1,7 +1,7 @@
 .node{
     list-style-type: none;
     background-color: #F8F8F8;
-    width: 200px;
+    width: 500px;
     padding: 10px;
     margin-bottom: 25px;
 }
@@ -11,13 +11,17 @@
     color: white;
 }
 
+#source_write{
+    position: absolute;
+    display: none;
+}
+
 #trash{
 	color: white;
-	width: 200px;
+	width: 800px;
     padding: 10px;
 	font-size: 150%;
 	background-color: #6e7682;
-    border-radius: 15px;
 }
 
 .node-title{

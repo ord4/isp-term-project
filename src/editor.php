@@ -32,13 +32,20 @@
                 <button class="btn btn-primary" onclick=editHeader()>Edit Header</button><br>
                 <button class="btn btn-primary" onclick=addNode()>Add Node</button><br>
                 <button class="btn btn-primary" onclick=changeTheme()>Change Theme</button><br>
-                <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br>
-                <button class="btn btn-success" onclick=saveTimeline()>Save + Quit</button><br><br>
+                <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br><br>
+                <button class="btn btn-primary" onclick=checkPost()>check post (dev)</button><br>
 
+                <form action="save.php" method="post">
+                <input type="text" id="source_write" name="timeline_write">
+                <input type="submit" value="Save & Quit" class = "btn btn-success">
+                </form>
+
+                <!--
                 <button class="btn btn-info" onclick=loadTimeline()>load json(dev)</button><br>
                 <button class="btn btn-info" onclick=loadTimelineSource()>load source (dev)</button><br>
                 <button class="btn btn-info" onclick=renderTimeline()>render (dev)</button><br>
                 <button class="btn btn-info" onclick=peekTimeline()>peek (dev)</button><br>
+            -->
 
                 <p id="json-out"></p>
             </div>

@@ -15,6 +15,7 @@ function updateTimelineOrder(){
 
 function removeNode(i){
     timeline["nodes"].splice(i, 1);
+    renderTimeline();
 }
 
 function peekTimeline(){
@@ -85,6 +86,13 @@ function renderTimeline(){
     });
 
     applyTheme();
+
+    checkPost();
+}
+
+function checkPost(){
+    document.getElementById("source_write").value = '';
+    document.getElementById("source_write").value = JSON.stringify(timeline);
 }
 
 function renderNode(node){
@@ -197,6 +205,7 @@ function addNode(){
     });
 
     renderTimeline();
+    checkPost();
 }
 
 function editHeader(){
@@ -206,6 +215,7 @@ function editHeader(){
     document.getElementById("timeline-desc").textContent = desc;
     timeline['title'] = title;
     timeline['desc'] = desc;
+    checkPost();
 }
 
 function changeTheme(){
@@ -217,6 +227,7 @@ function changeTheme(){
     }
 
     applyTheme();
+    checkPost();
 }
 
 function newTimeline(){
@@ -227,6 +238,7 @@ function newTimeline(){
     timeline["nodes"] = [];
 
     renderTimeline();
+    checkPost();
 }
 
 function clearTimeline(){

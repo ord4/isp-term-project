@@ -56,7 +56,14 @@
                                     }
                                 } 
 
-                                header("location: editor.php");
+                                if($_POST['mode'] == "edit")
+                                {
+                                    header("location: editor.php");
+                                }
+                                if($_POST['mode'] == "view")
+                                {
+                                    header("location: viewer.php");
+                                }
 
                                 exit();
 
@@ -110,6 +117,9 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                     <span class="help-block"><?php echo $password_err; ?></span>
                 </div>
+
+                <input type="radio" name="mode" value="view" checked> Viewer<br>
+                <input type="radio" name="mode" value="edit"> Editor<br>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
