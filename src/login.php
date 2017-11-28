@@ -42,7 +42,7 @@
                             if(password_verify($password, $hashed_password)) {
                                 session_start();
                                 $_SESSION['username'] = $username;      
-                                header("location: editor.html");
+                                header("location: login.php");
 
                             } 
                             else {
