@@ -19,17 +19,25 @@
 </head>
 
 <body>
+    <img id="logo" src="assets\images\myline.png">
+
+    <div class="jumbotron text-center" id="main-jumbo">
+        <h1 id="timeline-title"></h1>
+    </div>
 
     <div class ="container-fluid">
         <div class="row">
             <div class="col-lg-4 well">
-                <P><-- EDITOR SIDEBAR --></P>
-                <button class="btn btn-primary" onclick=loadTimeline()>Load</button>
-                <button class="btn btn-primary" onclick=newTimeline()>New</button>
-                <button class="btn btn-primary" onclick=peekTimeline()>Peek (dev)</button>
-                <button class="btn btn-primary" onclick=addNode()>add</button>
-                <button class="btn btn-primary" onclick=clearTimeline()>clear</button>
-                <button class="btn btn-primary" onclick=renderTimeline()>render</button>
+                <h1>Toolbox</h1>
+                <button class="btn btn-primary" onclick=editHeader()>Edit Header</button><br>
+                <button class="btn btn-primary" onclick=addNode()>Add Node</button><br>
+                <button class="btn btn-primary" onclick=changeTheme()>Change Theme</button><br>
+                <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br><br>
+
+                <button class="btn btn-info" onclick=loadTimeline()>load (dev)</button><br>
+                <button class="btn btn-info" onclick=renderTimeline()>render (dev)</button><br>
+                <button class="btn btn-info" onclick=peekTimeline()>peek (dev)</button><br>
+
                 <p id="json-out"></p>
             </div>
 
@@ -40,11 +48,13 @@
 
                 </ul>
 
-                <div id="trash">TRASH</div>
+                <div id="trash">Drag to Delete</div>
             </div>
         </div>
+        <!--
         <h2>Paste into prompt triggered by LOAD button</h2>
         <p>{"theme":"#1861bb","title":"#timeine-title","desc":"a desc","nodes":[{"node-title":"Node Title (click me)","node-date":"Node Date","node-more":[{"node-text":"Node Text"},{"node-image":"link-to-file"}]},{"node-title":"Node Title 2 (click me)","node-date":"Node Date 2","node-more":[{"node-text":"Node Text 2"},{"node-link":"link-to-website"}]},{"node-title":"Node Title 3 (click me)","node-date":"Node Date 3","node-more":[{"node-text":"Node Text 3"},{"node-link":"link-to-website"}]}]}</p>
+         -->
     </div>
  
 </body>

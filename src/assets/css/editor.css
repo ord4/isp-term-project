@@ -11,7 +11,8 @@
 	width: 200px;
     padding: 10px;
 	font-size: 150%;
-	background-color: black;
+	background-color: #6e7682;
+    border-radius: 15px;
 }
 
 .node-title{
@@ -32,4 +33,27 @@
 
 .node-link{
     display: block;
+}
+
+.btn{
+    margin-bottom: 5px;
+    width: 150px;
+}
+
+.node-image{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 25px;
+}
+
+#main-jumbo {
+    padding: 0.5em 0.6em;
+    color: white;
+    background-color: black;
+}
+
+#logo{
+    height: 50px;
+    margin: 20px;
 }

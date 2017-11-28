@@ -1,7 +1,7 @@
 var timeline = {}; //Global object model for timeline
-timeline["theme"] = "#999999";
-timeline["title"] = "title";
-timeline["desc"] = "description";
+timeline["theme"] = "blue";
+timeline["title"] = "Your Timeline";
+timeline["desc"] = "A fresh timeline";
 timeline["nodes"] = [];
 // Global integer to track old/new position of a timeline node
 var oldIndex;
@@ -31,11 +31,33 @@ function loadTimeline(){
     }
 }
 
+function applyTheme(){
+    var theme = timeline["theme"];
+    var headColor;
+    var highlightColor;
 
+    switch(theme){
+        case "blue":
+            headColor = "#4a81c4";
+            break;
+        case "red":
+            headColor = "#c94242";
+            break;
+        case "green":
+            headColor = "#41c681";
+            break;
 
-/*
+    }
 
-*/
+    document.getElementById("main-jumbo").style.backgroundColor = headColor;
+
+    var nodeHeads = document.getElementsByClassName("node-date");
+
+    for(var i = 0; i <  nodeHeads.length; i++){
+         nodeHeads[i].style.backgroundColor = highlightColor;
+    }
+}
+
 
 function renderTimeline(){
     
@@ -55,6 +77,8 @@ function renderTimeline(){
       active: false,
       collapsible: true
     });
+
+    applyTheme();
 }
 
 function renderNode(node){
@@ -97,25 +121,28 @@ function renderNode(node){
 function renderNodeItem(item){
 
     var type = Object.keys(item).toString();
-    
+    var itemDiv;
     switch(type){
 
         case "node-text":
-            var itemDiv = document.createElement("div");
-            itemDiv.className = type;
+            itemDiv = document.createElement("div");
             itemDiv.textContent = item[type];
             break;
 
         case "node-link":
-            var itemDiv = document.createElement("p");
-            itemDiv.textContent = "IM A LINK";
+            itemDiv = document.createElement("a");
+            itemDiv.href = item[type];
+            itemDiv.textContent = item[type];
             break;
 
         case "node-image":
-            var itemDiv = document.createElement("p");
-            itemDiv.textContent = "IM AN IMAGE";
+            itemDiv = document.createElement("img");
+            itemDiv.src = item[type];
             break;
     }
+
+
+    itemDiv.className = type;
 
     return itemDiv;
 }
@@ -123,20 +150,72 @@ function renderNodeItem(item){
 function addNode(){
 
     var node = {};
-    node["node-title"] = "New Title";
-    node["node-date"] = "New Date";
+    var input;
+    input = prompt("Enter a title for the node: ");
+    if(input != ''){
+        node["node-title"] = input;
+    }
+    else{
+        node["node-title"] = "title";
+    }
+
+    input = prompt("Enter a date for the node: ");
+    if(input != ''){
+        node["node-date"] = input;
+    }
+    else{
+        node["node-date"] = "date";
+    }
+
     node["node-more"] = [];
+
+    var more;
+    more = prompt("Enter an (optional) short description for the node: ");
+    if(more != ''){
+        node["node-more"].push({'node-text' : more});
+    }
+    more = prompt("Enter an (optional) website link for the node: ");
+    if(more != ''){
+        node["node-more"].push({'node-link' : more});
+    }
+    more = prompt("Enter an (optional) image for the node: ");
+    if(more != ''){
+        node["node-more"].push({'node-image' : more});
+    }
+
     timeline["nodes"].push(node);
 
     $( ".node-more" ).accordion({
       active: false,
       collapsible: true
     });
+
+    renderTimeline();
+}
+
+function editHeader(){
+    var title = prompt("New timeline title: ");
+    var desc = prompt("New timeline description: ");
+    document.getElementById("timeline-title").textContent = title;
+    document.getElementById("timeline-desc").textContent = desc;
+    timeline['title'] = title;
+    timeline['desc'] = desc;
+}
+
+function changeTheme(){
+    var theme = prompt("Enter a theme (red, blue, or green)");
+
+    if(theme == 'red' || theme == 'blue' || theme == 'green')
+    {
+        timeline["theme"] = theme;
+    }
+
+    applyTheme();
 }
 
 function newTimeline(){
     timeline = {};
-    timeline["theme"] = prompt("Theme (Hex Color)");
+    timeline["theme"] = "red";
     timeline["title"] = prompt("Title");
     timeline["desc"] = prompt("A Short Description")
     timeline["nodes"] = [];
@@ -152,6 +231,7 @@ function clearTimeline(){
 
 // JQuery functions for Drag-And-Drop interaction
 $(document).ready(function() {
+    renderTimeline();
     $( "#nodes" ).sortable({
         start: function(e, ui) {
             // Old position of node on timeline (before drag and drop)
