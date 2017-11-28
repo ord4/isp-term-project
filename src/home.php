@@ -1,11 +1,6 @@
 <?
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["editor"])) {
-            header("location: editor.html");
-        }
-        else if (isset($_POST["viewer"])) {
-            header("location: viewer.html");
-        }
+        header("location: editor.html");
     }
 ?>
 
@@ -22,8 +17,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <input type="submit" name="editor" value="Editor">
-            <input type="submit" name="viewer" value="Viewer">
-        </div>
+            <a href="editor.html">Go to the editor.</a>
+            <a href="viewer.html">Go to the viewer.</a>
     </body>
 </html>
