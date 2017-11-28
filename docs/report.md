@@ -14,16 +14,21 @@ The user interface was marked up using HTML and CSS.  There are various differen
 ### Screenshots
 Below are a series of screenshots of the application's different pages and interfaces.
 
-<label for="login_img">Login page, first page you encounter</label>
-<img id="login_img" src="./images/login.png" style="display:block;margin:auto;">
-<hr>
+<img src="newlogin.png" style="display:block;margin:auto;">
 
-<label for="viewer_img">Example viewer output</label>
-<img id="viewer_img" src="./images/viewer.png" style="display:block;margin:auto;">
-<hr>
+<img src="register.png" style="display:block;margin:auto;">
 
-<label for="editor_img">Timeline editor</label>
-<img id="editor_img" src="./images/editor.png" style="display:block;margin:auto;">
+<img src="viewer.png" style="display:block;margin:auto;">
+
+<img id="blank_editor" src="./images/blankeditor.png" style="display:block;margin:auto;">
+
+<img id="editor_progress_1" src="./images/editor_progress1.png" style="display:block;margin:auto;">
+
+<img id="edditor_progress_3" src="./images/editor_progress3.png" style="display:block;margin:auto;">
+
+<img src="finished_example2.png" style="display:block;margin:auto;">
+
+
 
 ### Contributions
 For the application Tim headed up the design of the editor and how to represent all of its information.  He worked on the user interface and making sure it was simple to use and the user could create new events and move them around as need be.  Tim also designed how the data would be kept so that it could be saved in the database and then retrieved and read when the user logs in to continue editing the timeline.  Tim's work with the editor also included developing a viewer of the user's timeline which they could then screenshot and save an image of.
