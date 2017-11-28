@@ -10,6 +10,13 @@ function loadTimeline(){
     applyTheme();
 }
 
+function loadTimelineSource(){
+    var timelineJSON = document.getElementById("source").textContent;
+    timeline = JSON.parse(timelineJSON);
+    renderTimeline();
+    applyTheme();
+}
+
 function applyTheme(){
     var theme = timeline["theme"];
     var headColor;
@@ -122,7 +129,7 @@ function renderNodeItem(item){
 
 // JQuery functions for Drag-And-Drop interaction
 $(document).ready(function() {
-    loadTimeline();
+    loadTimelineSource();
 
      $( ".node-more" ).accordion({
       active: false,

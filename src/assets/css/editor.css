@@ -6,6 +6,11 @@
     margin-bottom: 25px;
 }
 
+#source{
+    display: none;
+    color: white;
+}
+
 #trash{
 	color: white;
 	width: 200px;

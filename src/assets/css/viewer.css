@@ -8,6 +8,11 @@
     margin: 20px;
 }
 
+#source{
+    display: none;
+    color: white;
+}
+
 .node{
     list-style-type: none;
     background-color: white;

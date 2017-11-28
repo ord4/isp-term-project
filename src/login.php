@@ -2,7 +2,7 @@
     /*
         Code adapted from www.tutorialrepublic.com
     */
-
+    session_start();
 
     require_once 'config.php';
 
@@ -40,9 +40,25 @@
 
                         if(mysqli_stmt_fetch($stmt)) {
                             if(password_verify($password, $hashed_password)) {
-                                session_start();
-                                $_SESSION['username'] = $username;      
-                                header("location: editor.html");
+                                //session_start();
+                                $_SESSION['username'] = $username;
+                                $_SESSION['loggedin'] = true;
+
+                                $query = "SELECT `id`, `username`, `password`, `timeline` FROM `users` WHERE `username`='".$username."'";
+
+                                $result = $link->query($query);
+
+                                if ($result->num_rows > 0) 
+                                {
+                                    while($row = $result->fetch_assoc()) 
+                                    {
+                                        $_SESSION['timeline'] = $row['timeline'];
+                                    }
+                                } 
+
+                                header("location: editor.php");
+
+                                exit();
 
                             } 
                             else {

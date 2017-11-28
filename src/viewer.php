@@ -39,6 +39,12 @@
 
 
     </div>
+
+    <?php
+        session_start();
+        echo "<div id=\"source\">".$_SESSION['timeline']."</div>";
+    ?>
+
 </body>
  
 </html>

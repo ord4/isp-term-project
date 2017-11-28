@@ -31,6 +31,12 @@ function loadTimeline(){
     }
 }
 
+function loadTimelineSource(){
+    var timelineJSON = document.getElementById("source").textContent;
+    timeline = JSON.parse(timelineJSON);
+    renderTimeline();
+}
+
 function applyTheme(){
     var theme = timeline["theme"];
     var headColor;
@@ -231,7 +237,7 @@ function clearTimeline(){
 
 // JQuery functions for Drag-And-Drop interaction
 $(document).ready(function() {
-    renderTimeline();
+    loadTimelineSource();
     $( "#nodes" ).sortable({
         start: function(e, ui) {
             // Old position of node on timeline (before drag and drop)
