@@ -41,24 +41,12 @@ other external web pages.
 
 #### Database Design
 As stated earlier, the team used MySQL to maintain the database
-for this application.  The information for a timeline will be
-stored in a table which will hold the following information, such
-as timeline id, owner, and data. The timeline data will be a table of its own containing the
-different events making up a timeline. Multiple approaches for data storage and retrieval 
-are currently being considered. These include:
-
-  - Creating unique databse tables for individual timelines with timeine data items being stored in table cells
-  
-  - Storing whole XML or JSON files representing a timeline to a database table mapped to a unique user
-  
-The team's current design of the database would be as follows:
-
-  User table
-    Unique ID - Username - Hashed Password
-  
-  Timelines table
-    Unique ID - Timeline file
-
+for this application.  The information for the user will be stored in a table holding the following information with the SQL datatype in parenthesis:
+* Unique id (INT)
+* Username (VARCHAR)
+* Hashed password (VARCHAR)
+* Timeline data (LONGTEXT)
+Note that while the timeline data is stored of type `LONGTEXT` the string itself will be formatted for JSON.
 
 ### Business Logic
 It is much easier to understand what is going to happen, or what
@@ -87,23 +75,21 @@ a large event while giving them the ability to discover more details
 in an engaging and intuitive matter.
 
 ### Application Features
-This application is still in the planning phase, therefore, no lines of
-production code have been written yet. A small, proof-of-concept build
-has been developed.
+This application will allow users to create an account and log in.  From here the users will be able access the timeline editor where they can edit their custom, dynamic timeline.  Additionaly there is a viewing feature that allows the user to see their timeline output without the clutter of the editor and in a way that they would want to present their timeline to the public.  Some of the specifics for the features and what they do are detailed in the following subsections.
 
-### Account Creation & Login
+#### Account Creation & Login
 User will be prompted to login to their account on the homepage.
 Once logged in, they will be directed to a dashboard with various
 account settings and a list the timelines they've created. Usernames will
 be mapped to a unique key for the database and associated timelines
 will be mapped to the user with the same key.
 
-#### Creating a Timeline
+##### Creating a Timeline
 Editors will be able to create a new timeline for their event
 which will bring up the timeline editor. User will initially be
 asked for a timeline title. 
 
-#### Editing a Timeline
+##### Editing a Timeline
 Editors will have options for adding new items, editing existing
 items, or removing items.  When adding an item the editor will get
 to enter a title and time period.  Then, the editor will be able
@@ -116,7 +102,6 @@ to add additional information or content (text, links to other pages, media etc.
 - Production goal: Dynamic drag-and-drop interface
 
 ##### Example item/timeline node:
-
     Time: "11/13/17"
   
     Title: "ISP Term Project Started"
@@ -140,8 +125,7 @@ finish editing later they can save their work.  This will store
 the timeline's current information in the database so it can be
 retrieved when they are ready to continue working on it.
 
-##### Implementation of save
-
+#### Implementation of save
   - Serialize timeline into a JSON or XML file and save to a table containing other timelines
   unique to the user
   
@@ -154,7 +138,6 @@ retrieved when they are ready to continue working on it.
 Portable version of app with accompanying XML/JSON representation of timeline
 
 ### Roadmap
-
 1) Create basic web application to parse and display (as HTML) a XML/JSON file describing structure of timeline
 
 2) Add functionality to application to edit the XML/JSON file and save the changes to it
@@ -163,4 +146,4 @@ Portable version of app with accompanying XML/JSON representation of timeline
 
 4) Design more intuitive user-interface with Javascript and CSS
 
-5) Add more comprehensive database system to accomdate multiple users that own multiple timelines
+5) Add more comprehensive database system to accomdate users having multiple timelines
