@@ -14,19 +14,19 @@ The user interface was marked up using HTML and CSS.  There are various differen
 ### Screenshots
 Below are a series of screenshots of the application's different pages and interfaces.
 
-<img src="newlogin.png" style="display:block;margin:auto;">
+<img src="./images/newlogin.png" style="display:block;margin:auto;">
 
-<img src="register.png" style="display:block;margin:auto;">
+<img src="./images/register.png" style="display:block;margin:auto;">
 
-<img src="viewer.png" style="display:block;margin:auto;">
+<img src="./images/viewer.png" style="display:block;margin:auto;">
 
 <img id="blank_editor" src="./images/blankeditor.png" style="display:block;margin:auto;">
 
 <img id="editor_progress_1" src="./images/editor_progress1.png" style="display:block;margin:auto;">
 
-<img id="edditor_progress_3" src="./images/editor_progress3.png" style="display:block;margin:auto;">
+<img id="edditor_progress_3" src="./images/editor_progress3_shortdragdropdelete.png" style="display:block;margin:auto;">
 
-<img src="finished_example2.png" style="display:block;margin:auto;">
+<img src="./images/finished_example2.png" style="display:block;margin:auto;">
 
 
 
