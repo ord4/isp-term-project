@@ -1,7 +1,7 @@
 .node{
     list-style-type: none;
     background-color: #F8F8F8;
-    width: 500px;
+    width: 600px;
     padding: 10px;
     margin-bottom: 25px;
 }
@@ -16,12 +16,17 @@
     display: none;
 }
 
+#timeline-desc{
+    font-size: 18pt;
+}
+
 #trash{
 	color: white;
-	width: 800px;
+	width: 600px;
     padding: 10px;
 	font-size: 150%;
 	background-color: #6e7682;
+    border-radius: 15px;
 }
 
 .node-title{
@@ -33,6 +38,7 @@
 }
 
 .node-more{
+    outline-style: none;
     display: inline;
 }
 

@@ -19,8 +19,7 @@
 </head>
 
 <body>
-    <img id="logo" src="assets\images
-\myline.png">
+    <a href="login.php"><img id="logo" src="assets\images\myline.png"></a>
 
     <div class="jumbotron text-center" id="main-jumbo">
         <h1 id="timeline-title">#timeine-title</h1>

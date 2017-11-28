@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <img id="logo" src="assets\images\myline.png">
+    <a href="login.php"><img id="logo" src="assets\images\myline.png"></a>
 
     <div class="jumbotron text-center" id="main-jumbo">
         <h1 id="timeline-title"></h1>
@@ -33,7 +33,6 @@
                 <button class="btn btn-primary" onclick=addNode()>Add Node</button><br>
                 <button class="btn btn-primary" onclick=changeTheme()>Change Theme</button><br>
                 <button class="btn btn-primary" onclick=newTimeline()>New Timeline</button><br><br>
-                <button class="btn btn-primary" onclick=checkPost()>check post (dev)</button><br>
 
                 <form action="save.php" method="post">
                 <input type="text" id="source_write" name="timeline_write">

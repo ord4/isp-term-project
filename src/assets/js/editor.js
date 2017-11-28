@@ -11,6 +11,7 @@ function updateTimelineOrder(){
     var node = timeline["nodes"][oldIndex];
     timeline["nodes"].splice(oldIndex, 1);
     timeline["nodes"].splice(newIndex, 0, node);
+    checkPost();
 }
 
 function removeNode(i){

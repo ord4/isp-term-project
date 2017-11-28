@@ -103,7 +103,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <img src="./assets/images/myline.png" style="width:80%;height=auto;">
+            <a href="login.php"><img src="./assets/images/myline.png" style="width:80%;height=auto;"></a>
             <p>Please fill in your credentials to login.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
