@@ -16,12 +16,22 @@ Below are a series of screenshots of the application's different pages and inter
 
 <label for="login_img">Login page, first page you encounter</label>
 <img id="login_img" src="./images/login.png" style="display:block;margin:auto;">
-<br>
+<hr>
 
 <label for="viewer_img">Example viewer output</label>
 <img id="viewer_img" src="./images/viewer.png" style="display:block;margin:auto;">
-<br>
+<hr>
 
-<label for="login_img">Login page, first page you encounter</label>
-<img id="login_img" src="./images/login.png" style="display:block;margin:auto;">
-<br>
+<label for="editor_img">Timeline editor</label>
+<img id="editor_img" src="./images/editor.png" style="display:block;margin:auto;">
+
+### Contributions
+For the application Tim headed up the design of the editor and how to represent all of its information.  He worked on the user interface and making sure it was simple to use and the user could create new events and move them around as need be.  Tim also designed how the data would be kept so that it could be saved in the database and then retrieved and read when the user logs in to continue editing the timeline.  Tim's work with the editor also included developing a viewer of the user's timeline which they could then screenshot and save an image of.
+
+The login and registration forms were designed by Orion.  He created the interface for the forms and connected them with the database, which he also headed.  Once a new user had registered they were able to login and be routed to the editor to begin editing their timeline.  
+
+### Experience Gained
+Throughout this project the team learned how to create a full scale web application.  The team learned how to design a database to store different information needed for all of the users and making sure their data is safe.  This project tought the team a few of the basics to storing passwords safely through the process of password hashing.  The team also learned about creating dynamic webpages as is evident in the dynamic editable nature of the timeline editor.  And finally when getting ready to deliver the project the team learned a few things about deploying an application that uses a database and server that must be accessable to other users and not just local to the machine.
+
+### Future Work
+To expand this project in the future the team could look to allow users to have more than one timeline in which they can edit and view at the same time rather than just one at a time.  Another possible expansion of the project could be a homepage where the user can view all their timeline and also be able to browse other timelines that users have created an made public.  Finally, and perhaps one of the most important next steps would be to create a version of the timeline that is easily exportable and can be embedded into user's own webpages or other media.
