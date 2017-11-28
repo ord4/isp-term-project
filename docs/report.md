@@ -11,4 +11,6 @@ The database is a table which contains the user's account information.  This inf
 
 The front end uses HTML and CSS to provide the interface to the user.  Most of the editor's functions are handled local to the client through JavaScript, but when the user is ready to save their timeline the information gets sent to the database.  *TODO: Add more to this section*
 
-  
+### Screenshots
+Below are a series of screenshots of the application's different pages and interfaces.
+<img src="./images/login.png" style="display:block;margin:auto;">
